@@ -16,4 +16,7 @@ router.get('/jenkins_404', function (req, res, next) {
     res.sendFile(path.resolve(__dirname,'../public/htmls/404/jenkins_404.html'));
 });
 
+router.get('/puzzle', function (req, res, next) {
+    res.sendFile(path.resolve(__dirname,'../public/htmls/puzzle/puzzle.html'));
+});
 module.exports = router;
