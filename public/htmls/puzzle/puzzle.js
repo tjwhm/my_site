@@ -1,7 +1,13 @@
 function onConfirmClicked() {
     let src = document.getElementById('input-pic-address').value;
     let rows = document.getElementById('input-rows').value;
-    Puzzle.newPuzzle(src, rows, rows, height, height, false);
+    if (src != null && src !== "" && src !== undefined && rows != null && rows !== "" && rows !== undefined) {
+        Puzzle.newPuzzle(src, rows, rows, height, height, false);
+    } else if (rows != null && rows !== "" && rows !== undefined) {
+        Puzzle.newPuzzle(init_image_address, rows, rows, height, height, false);
+    } else if (src != null && src !== "" && src !== undefined) {
+        Puzzle.newPuzzle(src, init_rows, init_rows, height, height, false);
+    }
 }
 
 function onInitClicked() {
