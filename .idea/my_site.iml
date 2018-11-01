@@ -11,5 +11,6 @@
     <orderEntry type="library" name="rgbaster" level="application" />
     <orderEntry type="library" name="jquery" level="application" />
     <orderEntry type="library" name="jquery.adaptive-backgrounds" level="application" />
+    <orderEntry type="library" name="jquery-3.3.1" level="application" />
   </component>
 </module>
