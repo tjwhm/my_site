@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,21 +12,24 @@
         @import url(https://fonts.googleapis.com/css?family=Bree+Serif);
 
         body {
-            background: #ffffff linear-gradient(
-                    12rad,
-                    #79CBCA,
-                    #E684AE
-            );
             height: 100vh;
+            margin: 0px;
             font-family: 'Bree Serif', sans-serif;
+        }
+        .body-div {
+            height: 100vh;
+            margin-top: 0px;
+            padding-bottom: 5vh;
+            padding-top: 5vh;
+            background-image: url("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1541106187635&di=7b83e18b008e0872167850f22541d903&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2F9d82d158ccbf6c81cb6f4dd2b73eb13533fa40ab.jpg");
         }
 
         .container {
-            max-width: 800px;
-            margin: 5% auto;
+            max-width: 1000px;
             padding: 20px;
-            background-color: #fff;
-            color: #1c1c1c;
+            margin: auto auto;
+            background-image: url("https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3173638680,3154239888&fm=200&gp=0.jpg");
+            color: #2c2c2f;
             border-radius: 10px;
             overflow: hidden;
             box-sizing: border-box;
@@ -48,7 +52,7 @@
         .gallery div > img {
             max-width: 100%;
             display: block;
-            box-shadow: 5px 5px 0 0 #1c1c1c;
+            box-shadow: 5px 5px 0 0 #cdcdcd;
             cursor: pointer;
         }
 
@@ -101,13 +105,15 @@
     </style>
 </head>
 <body>
-<div class="container" id="container">
-    <h2 class="text-center">Gallery</h2>
-    <div class="gallery" id="gallery">
-        <image-item
-                v-for="image in imageList"
-                v-bind:image="image">
-        </image-item>
+<div class="body-div" >
+    <div class="container" id="container">
+        <h2 class="text-center">Gallery</h2>
+        <div class="gallery" id="gallery">
+            <image-item
+                    v-for="image in imageList"
+                    v-bind:image="image">
+            </image-item>
+        </div>
     </div>
 </div>
 </body>
@@ -155,6 +161,11 @@
                         id: 5,
                         address: 'https://gss2.bdstatic.com/-fo3dSag_xI4khGkpoWK1HF6hhy/baike/w%3D268%3Bg%3D0/sign=cf02dac43bd3d539c13d08c502bc8e6d/aa18972bd40735fae025b48393510fb30f240836.jpg',
                         text: 'Femme en pleurs'
+                    },
+                    {
+                        id: 6,
+                        address: 'https://gss1.bdstatic.com/-vo3dSag_xI4khGkpoWK1HF6hhy/baike/s%3D220/sign=7fd8aee3e0fe9925cf0c6e5204a95ee4/cc11728b4710b9128d0d40d8c3fdfc03934522c3.jpg',
+                        text: 'Self-Portrait'
                     }
                 ]
             },
@@ -173,7 +184,7 @@
         $('.gallery img').click(function (e) {
             e.preventDefault();
 
-            $('#container')[0].style.filter = "blur(5px)";
+            $('.body-div')[0].style.filter = "blur(5px)";
             let src = $(this).attr("src");
             let text = $(this).attr("text");
 
@@ -184,15 +195,15 @@
             $bigImgBox.fadeIn('fast');
 
             $bigImgBox.click(function () {
-                $('#container')[0].style.filter = "";
+                $('.body-div')[0].style.filter = "";
                 $bigImgBox.fadeOut('fast');
             });
         }).hover(function () {
-            this.style.setProperty('box-shadow', '5px 5px 0 0 red');
+            this.style.setProperty('box-shadow', '5px 5px 0 0 #c08b41');
             this.style.setProperty('transform', 'scale(1.05)')
 
         }, function () {
-            this.style.setProperty('box-shadow', '5px 5px 0 0 #1c1c1c');
+            this.style.setProperty('box-shadow', '5px 5px 0 0 rgba(0, 0, 0, 0.4)');
             this.style.setProperty('transform', 'scale(1)')
         });
 
